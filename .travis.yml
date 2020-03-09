@@ -6,9 +6,9 @@ before_install:
 
 addons:
   sonarcloud:
-   organization:"seekerk-github"
+   organization:"dzigen"
    token:
-    secure: $SONAR_TOKEN
+    secure: $7ca78dc27da410a308e9a7e6720db95da37ad196
 
 script:
   - qmake
@@ -18,7 +18,7 @@ script:
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner
+  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 cache:
  directories:
