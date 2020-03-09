@@ -10,7 +10,7 @@ addons:
   sonarcloud:
    organization:"dzigen"
    token:
-    secure: $Dzigen_First_prog_test
+    secure:  0fee3cc483831a87552b9283c611f9611b0dca4b
 
 script:
   - qmake
