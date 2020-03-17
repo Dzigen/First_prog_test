@@ -4,14 +4,6 @@ language:
 before_install:
   - pip install --user cpp-coveralls
 
-dist: trusty
-
-addons:
-  sonarcloud:
-   organization:"dzigen"
-   token:
-    secure: $SONAR_TOKEN
-
 script:
   - qmake
   - make
@@ -20,11 +12,7 @@ script:
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
-
-cache:
- directories:
-  -'$HOME/.sonar/cache'
+  - sonar-scanner
 
 notifications:
   email: false
