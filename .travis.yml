@@ -8,7 +8,7 @@ addons:
  sonarcloud:
  organization: "dzigen"
  token:
- secure: $SONAR_TOKEN
+ secure:"6996099b96d7201c7b91aed220d77a1b01644c32"
 
 script:
   - qmake
