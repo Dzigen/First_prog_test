@@ -8,12 +8,14 @@ addons:
  sonarcloud:
  organization: "dzigen"
  token:
- secure: $TOKEN_SONAR
+ secure: $SONAR_TOKEN
 
 script:
   - qmake
   - make
   - ./tests/tests
+
+dist: trusty
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
