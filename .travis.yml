@@ -2,7 +2,9 @@ language:
 - cpp
 before_install:
 - pip install --user cpp-coveralls
+
 dist: trusty
+
 addons:
   sonarcloud: 
   organization: "dzigen"
