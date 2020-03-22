@@ -5,6 +5,13 @@ language:
 before_install:
  - pip install --user cpp-coveralls
 
+dist: trusty
+
+addons:
+ sonarcloud:
+ organization: "dzigen"
+ token:
+ secure: "rPcneWqRmldVQVLSqUdhIZciaiA7PetvqOlkLYwIXX3O5O1TTIz40sVh++sVCWwfnVRFSAG9st5GmSOuE/wuy+zFIdSC53R34q2FyiWJmylOIvb8bCjCFuOJbVH4r7KMF8fnt317k0hEyMxUrf0otASbGCWB1ivi3LGWGQzg5VwmalkRuLulK7bwUvv4Sy+rlmQsmU9/FhPTdmxD+9E6j7qZFlyLu4GRzNeonsxWa65FflTtZo/LGhtEz9AAeipn+bBsdwPAGCWaNUH89JBtpe5SuICcECChISx4t5rpqX36ulC7JDESuEX9ZmJ+2ySb3e6GBQtCSgFiYvptwuBlbjPIx3FSF/ok18QNFB8x4VsYdqt/RmZrzhNFarQoyslKGu+hjEs5OwjtY90wKBiTxSHRk4M/QmKSK8rgIOxpQyXUNpWHMSnRGjYd0u0JEdKa5AyCtI3KitNeZVu5s9sgtqDUzYxH8BhSI9JMq4SdTdSTT731/EXR6GeRt5C7PR8vnv/81usofMrfGBmp4dYxBbroRLUjHV4gMVysfBbVBbp2jM8kM5t4gPiw+zcqBvp5SehdrzESj6WwaykPOSfBHirZKZSsfWlDUDaH8J5sZ6Xi/QmxqNKLjfFKmtsx75roC+SN4hP4sj/HHuTdJd6GeMA5Hi/xKZPJvsUMFvTXYo4="
 
 
 
