@@ -18,12 +18,9 @@ LIBS += -lm
 
 HEADERS +=     tst_test1.h \
     ../app/myfunc.h \
-    fibonachi_test.h \
-    ../app/squared_equation.h \
-    squared_equation_test.h
+    fibonachi_test.h 
 
 SOURCES +=     main.cpp \
-    ../app/myfunc.c \
-    ../app/squared_equation.c
+    ../app/myfunc.c 
 
 INCLUDEPATH += ../app
