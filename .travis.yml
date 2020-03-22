@@ -1,34 +1,26 @@
-
 language:
- - cpp
-
+- cpp
 before_install:
- - pip install --user cpp-coveralls
-
+- pip install --user cpp-coveralls
 dist: trusty
-
 addons:
- sonarcloud:
- organization: "dzigen"
- token:
- secure: "rPcneWqRmldVQVLSqUdhIZciaiA7PetvqOlkLYwIXX3O5O1TTIz40sVh++sVCWwfnVRFSAG9st5GmSOuE/wuy+zFIdSC53R34q2FyiWJmylOIvb8bCjCFuOJbVH4r7KMF8fnt317k0hEyMxUrf0otASbGCWB1ivi3LGWGQzg5VwmalkRuLulK7bwUvv4Sy+rlmQsmU9/FhPTdmxD+9E6j7qZFlyLu4GRzNeonsxWa65FflTtZo/LGhtEz9AAeipn+bBsdwPAGCWaNUH89JBtpe5SuICcECChISx4t5rpqX36ulC7JDESuEX9ZmJ+2ySb3e6GBQtCSgFiYvptwuBlbjPIx3FSF/ok18QNFB8x4VsYdqt/RmZrzhNFarQoyslKGu+hjEs5OwjtY90wKBiTxSHRk4M/QmKSK8rgIOxpQyXUNpWHMSnRGjYd0u0JEdKa5AyCtI3KitNeZVu5s9sgtqDUzYxH8BhSI9JMq4SdTdSTT731/EXR6GeRt5C7PR8vnv/81usofMrfGBmp4dYxBbroRLUjHV4gMVysfBbVBbp2jM8kM5t4gPiw+zcqBvp5SehdrzESj6WwaykPOSfBHirZKZSsfWlDUDaH8J5sZ6Xi/QmxqNKLjfFKmtsx75roC+SN4hP4sj/HHuTdJd6GeMA5Hi/xKZPJvsUMFvTXYo4="
+  sonarcloud: 
+  organization: dzigen
 
-
-
+  
 script:
- - qmake
- - make
- - ./tests/tests
-
+- qmake
+- make
+- "./tests/tests"
 after_success:
- - coveralls --root . -E ".*external.*" -E ".*tests.*"
- - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
- - sonar-scanner
- 
+- coveralls --root . -E ".*external.*" -E ".*tests.*"
+- build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+- sonar-scanner
 cache:
- directories:
- - '$HOME/.sonar/cache'
-
-
+  directories:
+  - "$HOME/.sonar/cache"
 notifications:
- email: false
+  email: false
+env:
+  global:
+    secure: iUmGsNSKR6JMaP2wgxExHckwfl2Nod3Izs/Amt1v4OSnYhiVPlHbNf7Apu8GF2y2zeT4hf7hzSGyazsIfXi9wKIU4uDaQCvsRMO82o5GgGV1zRXcKu4uekQHYbYH3CaDs6NxJEdJj78x7QoVwMVN/oxqeZKTKrxa1PAdSr67ODkFwCMA2lBWOsahbZ1HrTXfzZ6kidDEI3CVdrK4T5wRO+sOBL9bu+xtMnOhban0yl2/a6ZVV/AXvT/NVy/mI2SxTXFsQERmGe8HBlDZUq+6DOGUFX/NW6zzuZ+WNVHOG/mPI4QGYtpyRbKHXT9yZOFpb8vDpNe80GKjzA8S0XhLQfLH4Fpun6IoifcMmJJaBnSOEkBDWtXF/1rTxolZljwrxFiS5VcZTyTvoqqHdYGXvL8oxhBp+sScqnokf4lCL7fxyCK6tI2d30zvDLqLhylRpIw3KzweGPdqlNiqzTgFp6UEbVCN1v/aC3SMk14r68LrjUsKLi4TXuQfKyuWs33k0PSYZf9sJAkVwYL9l4ag1evHKTQwp16dqY3Dwu04hMc8pxyE4/PNVfnSxMWVEVbWHkoGTUNS5OTWJDh0kXKvFUZQaZ5KTmMKLHzolVJRXKOd2dnGdZvQO5jatg8TCemAa0iuUlDqZsgMj/OFoXrRXIDNMYropTrnnz7eVsq6SdE=
