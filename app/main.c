@@ -5,6 +5,7 @@
 int main()
 {
     printf("Hello World!\n");
-    printf("%f\n",squared_equation(1,5,4));
-    return myfunc(2);
+    double properties_of_equation[4];
+    squared_equation(1,5,4, properties_of_equation );
+ return myfunc(2);
 }
