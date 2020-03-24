@@ -4,7 +4,6 @@ language:
 before_install:
   - pip install --user cpp-coveralls
 
-dist: trusty
 
 addons:
   sonarcloud: 
@@ -20,8 +19,7 @@ script:
 
 after_success:
 - coveralls --root . -E ".*external.*" -E ".*tests.*"
-- build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-- sonar-scanner
+- build-wrapper-linux-i686 --out-dir bw-output make clean all- sonar-scanner
 
 cache:
   directories:

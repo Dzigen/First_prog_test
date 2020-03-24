@@ -10,7 +10,7 @@ extern "C" {
 TEST(squared_equationTest, working)
 {
 
-    ASSERT_DOUBLE_EQ(squared_equation(1, 5, 4),-5.000);
+    ASSERT_FLOAT_EQ(squared_equation(0,0,0),0);
 
 }
 
