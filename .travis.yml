@@ -5,10 +5,10 @@ before_install:
   - pip install --user cpp-coveralls
 
 addons:
- sonarcloud:
- organization: "dzigen"
- token:
- secure: $SONAR_TOKEN
+  sonarcloud:
+    organization: "dzigen"
+    token:
+      secure: "idUEnFJTUgrZSFwfKYHuHLiTBEVJIFDdF3gtO+fqGNEWwenJtrJxTIKUl5wVzwABL3XPtL7+i50KcVrVfUjIuKGRMJwX564p6l8mvG6rhOg5jcqqkbK5J0TwF8wNvLFhVj3SwBA8gjPnR/4fk2NFJFwAywlSfh7cgh7EyDzyrJcNzogpppHmwRGCBsuGzrIMOSDsEBxwbl/uyxSkGyDBFknquN/xPyNntKvmMIXvwaRQvhlL98GfFKbt+HvRb8CzoJEPRMYLmeL8cjMaqNmH5DiuLsypET+bMK5G0zSj8NHkK53MXLxLX6gp7QylA60jcKAxUNCyRoiJ23yrxOxPO+p6aspgPeq8vqRSFQnGBzuGx7UhPBwafzaKS+LbUkttgkhI6Gl+dOJl/i1z/7MexehVe3LY5W+ttLKdSXFc+WTIPNT2TdkXt7duwpwXY9ayPFggxW/EH6p/0DvlATIdh8Fx9n8j6zksjRu9IWNqTOlriCtWpG137rYERxMs+3WPNUdBeuQiXqEgRom20wgQ7hcaTJrU4F5PxAAOcsRlbCJZzsyAbrqAo5NvPEkKuDpMbut1W6bjSLMEaZVja76LM7FBGcKSRSp80LHtX9gXzTypdbpQeIRHnkKJ/rmyW4j8F1dNrwPQn0kcSH+SFEDysa8LbqCBbxMH6ZrBy1eUJG4="
 
 script:
   - qmake
