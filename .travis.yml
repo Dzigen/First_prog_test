@@ -1,11 +1,10 @@
 language:
   - cpp
 
-dist: trusty
-
-
 before_install:
   - pip install --user cpp-coveralls
+  
+dist: trusty
 
 addons:
   sonarcloud: 
