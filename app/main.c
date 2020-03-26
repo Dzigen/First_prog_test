@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include "squared_equation.h"
 #include "myfunc.h"
 
