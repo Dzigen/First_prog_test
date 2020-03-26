@@ -3,29 +3,14 @@ language:
 
 before_install:
   - pip install --user cpp-coveralls
-  
-dist: trusty
-
-addons:
-  sonarcloud: 
-   organization: "dzigen"
-   token:
-    secure: "OVBln7e6E9WNFsp8bLCxM5Gzbl59XEWGjKnTe60auoQezFI5TVxDJeGJTxyi33mklSa1CgsuG86w6KEs6VRdZ9+R+PbyacUajOORlcV8dsdKYTOOg12TiDSMKKJpIGty+sde7zhZZu4GhiUSQWycZcQxMCHC+UGETOQQaOwPBceFSpbJcdlfhRo1B7rFdfWmXynpbsOr7aL2ja6qEOnQd0IFUhW3QvEJ2VK1CMPz0MHLM+qXhGhL4Wagmzi00UU0VxeNZsb1GfXQKaf0IEuM12Fx9QupZroKqFUR3AuOuAPnaAAJZjUN5RVO8NVvZewMV5qDw3WiSMiFnduotlQ/7m1ihjIC7NddzlCxSSMpXR7yHee6PQmbIQP2u1GKR0kEyXzK0hHE5KEEuYWUqBVob+o9g3Ra3p8hnpdq1gEuWv32ioLghfkarzT9QAku1pOPjR06XdjnN9WBmsOihn4RSOB1b76KGxspmkoCJrZj7acZs95epfHzFVcZvu+yoXYxxsD8cJSkWJNWZFxSEq3czJNKe++ejh5aEMGFAOK0S0LxxsNSl+WvPsiVpibv1a5lknN+ecsTdvS2Vx3ptvWqNR/Pq2GKyf2WNCh752EVcs8a2JOHc35/ZiE6m5/W+FxVC0Sxq4CoZoGy6unlwiY1BZspZJkJEDL5hOJkF1FAf/s="
-
 
 script:
   - qmake
   - make
-  - "./tests/tests"
+  - ./tests/tests
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
-  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
-cache:
-  directories:
-  - "$HOME/.sonar/cache"
-  
 notifications:
   email: false
