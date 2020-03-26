@@ -4,7 +4,6 @@
 
 int main()
 {
-
     printf("Hello World!\n");
 	
     double properties_of_equation[4];
