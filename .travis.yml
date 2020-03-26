@@ -3,6 +3,8 @@ language:
 
 before_install:
   - pip install --user cpp-coveralls
+script:
+  - ./configure --enable-gcov && make && make check
   
 dist: trusty
 
@@ -20,6 +22,7 @@ script:
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
